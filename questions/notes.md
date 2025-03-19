@@ -31,3 +31,21 @@
 
     E+00000.016: Error while enumerating installed packages.
     ```
+## 4. 配置ssh key后，git clone github报错，如下：
+    ```shell
+    git clone git@github.com:JiangYongYu1/fp16lut.git
+    Cloning into 'fp16lut'...
+    kex_exchange_identification: Connection closed by remote host
+    fatal: Could not read from remote repository.
+    ```
+    解决方法: 
+    ```shell
+    ssh -vT git@github.com, 如果配置正确，你应该看到类似 “Hi username! You’ve successfully authenticated…” 的提示。如果出现错误信息，可以根据调试信息进一步排查。
+    GitHub 支持通过 443 端口进行 SSH 连接。如果 22 端口受限，可以修改 SSH 客户端配置。编辑（或创建） ~/.ssh/config 文件，添加如下配置：
+    ```
+    ```
+    Host github.com
+        Hostname ssh.github.com
+        Port 443
+    ```
+    配置后问题解决
