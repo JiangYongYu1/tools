@@ -40,7 +40,7 @@
     ```
     解决方法: 
     ```shell
-    ssh -vT git@github.com, 如果配置正确，你应该看到类似 “Hi username! You’ve successfully authenticated…” 的提示。如果出现错误信息，可以根据调试信息进一步排查。
+    ssh -vT git@github.com, ssh -T git@github.com都可以如果配置正确，你应该看到类似 “Hi username! You’ve successfully authenticated…” 的提示。如果出现错误信息，可以根据调试信息进一步排查。
     GitHub 支持通过 443 端口进行 SSH 连接。如果 22 端口受限，可以修改 SSH 客户端配置。编辑（或创建） ~/.ssh/config 文件，添加如下配置：
     ```
     ```
